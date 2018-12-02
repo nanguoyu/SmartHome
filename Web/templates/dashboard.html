@@ -1,0 +1,126 @@
+
+{% block head %}
+
+    <meta charset="UTF-8">
+
+
+    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://nanguoyublog.qiniudn.com/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="http://nanguoyublog.qiniudn.com/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="http://nanguoyublog.qiniudn.com/bootstrap-datetimepicker.js"
+            charset="UTF-8"></script>
+    <script type="text/javascript" src="http://nanguoyublog.qiniudn.com/bootstrap-datetimepicker.zh-CN.js"
+            charset="UTF-8"></script>
+    <title>SmartHome</title>
+    <script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+
+
+
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+    <body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+
+                <p></p>
+                <div class="tabbable" id="tabs-811706">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-405761" data-toggle="tab">智能设备管理</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-405761">
+                            <p></p>
+                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <strong>您好! {{ name }} </strong>欢迎使用智能家居管理系统.
+                            </div>
+                            <p></p>
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+                                <div class="panel-heading"><h3 style="display: inline;">室外温湿度</h3></div>
+                                <div class="panel-body">
+                                    {{ fuckWeatherInfo }}
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+                                <div class="panel-heading"><h3 style="display: inline;">室内温湿度</h3></div>
+                                <div class="panel-body">
+                                    {{ MTemperatureHumidity }}
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+                                <div class="panel-heading">
+                                    <h3 style="display: inline;">实时监控</h3>
+                                    <a class="btn btn-primary" href="{{ url_for("CamCapure") }}" role="button" style="display: inline;float:right;">保存一张到相册</a>
+{#                                    <a class="btn btn-primary" href="{{ url_for("Alarm") }}" role="button" style="display: inline;float:right;">启动监控模式</a>#}
+                                </div>
+
+                                <div class="panel-body">
+                                    <p></p>
+                                    <img src="http://192.168.2.242:8090/?action=stream" alt="..." class="img-responsive center-block">
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+                                <div class="panel-heading"><h3 style="display: inline;">家电控制</h3></div>
+                                <div class="panel-body">
+                                    <p>请您操作</p>
+                                    <a class="btn btn-primary" href="{{ url_for("turnOn") }}" role="button">开灯</a>
+                                    <a class="btn btn-primary" href="{{ url_for("turnOff") }}" role="button">关灯</a>
+                                </div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+        $('a').tooltip();
+
+    </script>
+    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+    <div id="footer" style="border-top: 1px solid #eee;padding: 10px;">
+        <div style="text-align: center;color: #696969;">版权所有 © 2014-2018 。 保留所有权利。</div>
+
+    </div>
+{% endblock %}
