@@ -27,3 +27,22 @@ cd Web
 python view.py
 ```
 你可以在0.0.0.0:10086 访问
+
+##示例
+
+web界面
+![截图](http://ww1.sinaimg.cn/large/8268f477ly1g0n82rmbfjj20vd0qgdv5.jpg)
+
+DHT11温湿度传感器在客户端的读数
+![截图](http://ww1.sinaimg.cn/large/8268f477ly1g0n7yvnkvnj20wv03mmx1.jpg)
+
+室外温湿度与穿衣建议
+![截图](http://ww1.sinaimg.cn/large/8268f477ly1g0n7zxje5zj20y305idft.jpg)
+
+视频监控
+![截图](http://ww1.sinaimg.cn/large/8268f477ly1g0n80t7jrvj20w50g6qjl.jpg)
+
+开关控制
+![截图](http://ww1.sinaimg.cn/large/8268f477ly1g0n81ff431j20yl056wed.jpg)
+
+
