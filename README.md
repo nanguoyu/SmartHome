@@ -28,7 +28,7 @@ python view.py
 ```
 你可以在0.0.0.0:10086 访问
 
-##示例
+## 示例
 
 web界面
 ![截图](http://ww1.sinaimg.cn/large/8268f477ly1g0n82rmbfjj20vd0qgdv5.jpg)
